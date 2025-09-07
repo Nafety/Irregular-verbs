@@ -1,0 +1,171 @@
+:root {
+    --background-color: #444;
+    --text-color: #fff;
+    --primary-color: #fff; /* Blanc */
+    --secondary-color: #333; /* Blanc cassé */
+    --button-color: #333; /* Blanc pour les boutons */
+    --border-color: #fff; /* Blanc */
+    --correct-color: green;
+    --incorrect-color: red;
+    --hover-color: #fff; /* Blanc */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    opacity: 0.95; /* Légère transparence pour un effet doux */
+}
+
+h1 {
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.hidden {
+    display: none;
+}
+.mode-selector {
+    margin-bottom: 20px;
+}
+
+.mode-button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mode-button:hover,
+.mode-button.active {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    background-color: var(--primary-color);
+}
+
+#question-label {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 1em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+input[type="text"] {
+    width: calc(100% - 20px); /* Largeur du conteneur moins 20px */
+}
+button {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    color: var(--background-color);
+    background-color: var(--hover-color);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+#score {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.correct {
+    border: 2px solid var(--correct-color);
+    background-color: rgba(0, 255, 0, 0.1); /* Fond vert clair */
+}
+
+.incorrect {
+    border: 2px solid var(--incorrect-color);
+    background-color: rgba(255, 0, 0, 0.1); /* Fond rouge clair */
+}
+
+/* Style pour la liste scrollable */
+.scrollable-verb-list {
+    max-height: 300px; /* Hauteur maximale de la zone scrollable */
+    overflow-y: auto; /* Activer le défilement vertical */
+    border: 1px solid var(--border-color); /* Bordure pour mieux visualiser la zone */
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 10px; /* Espacement en bas */
+}
+
+/* Style pour chaque élément de verbe */
+.verb-item {
+    margin-bottom: 10px; /* Espacement entre les verbes */
+}
+
+.verb-header {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto; /* Case à cocher | Texte | Icône */
+    align-items: center; /* Alignement vertical */
+    gap: 10px; /* Espacement entre les éléments */
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.verb-header input[type="checkbox"] {
+    margin: 0; /* Réinitialiser la marge */
+}
+
+.verb-header .toggle-icon {
+    justify-self: end; /* Aligner l'icône à droite */
+}
+
+.verb-details {
+    padding: 10px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    margin-top: 5px;
+}
